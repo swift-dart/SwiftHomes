@@ -1,0 +1,74 @@
+name: HomePlugin
+version: '1.0.0'
+main: com.homes.plugin.HomePlugin
+api-version: '1.21'
+author: YourName
+description: Essentials-type home plugin with chest GUI
+
+commands:
+  sethome:
+    description: Open GUI to set a home
+    usage: /sethome [name]
+    permission: homeplugin.sethome
+  home:
+    description: Teleport to a home or open GUI to select
+    usage: /home [name]
+    permission: homeplugin.home
+  delhome:
+    description: Delete a home or open GUI to select
+    usage: /delhome [name]
+    permission: homeplugin.delhome
+  homes:
+    description: List all your homes. Use '/homes help' for detailed help or '/homes reload' to reload messages
+    usage: /homes [help|reload]
+    permission: homeplugin.homes
+
+permissions:
+  homeplugin.sethome:
+    description: Allows players to set homes
+    default: true
+  homeplugin.home:
+    description: Allows players to teleport to homes
+    default: true
+  homeplugin.delhome:
+    description: Allows players to delete homes
+    default: true
+  homeplugin.homes:
+    description: Allows players to list homes
+    default: true
+  homeplugin.unlimited:
+    description: Allows unlimited homes
+    default: op
+  homeplugin.homes.1:
+    description: Allows 1 home
+    default: false
+  homeplugin.homes.2:
+    description: Allows 2 homes
+    default: false
+  homeplugin.homes.3:
+    description: Allows 3 homes
+    default: false
+  homeplugin.homes.4:
+    description: Allows 4 homes
+    default: false
+  homeplugin.homes.5:
+    description: Allows 5 homes
+    default: false
+  homeplugin.homes.10:
+    description: Allows 10 homes
+    default: false
+  homeplugin.homes.15:
+    description: Allows 15 homes
+    default: false
+  homeplugin.homes.20:
+    description: Allows 20 homes
+    default: false
+  homeplugin.homes.25:
+    description: Allows 25 homes
+    default: false
+  homeplugin.homes.50:
+    description: Allows 50 homes
+    default: false
+  homeplugin.admin:
+    description: Allows reloading messages and other admin functions
+    default: op

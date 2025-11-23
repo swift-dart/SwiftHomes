@@ -1,0 +1,106 @@
+# HomePlugin Messages Configuration
+# Use & for color codes (e.g., &b for aqua, &f for white, &7 for gray)
+# Available color codes: &0-9, &a-f, &r (reset)
+
+# Command Messages
+commands:
+  sethome:
+    success: "&aHome '&f{name}&a' has been set!"
+    limit-reached: "&cYou have reached your home limit! ({current}/{max})"
+    name-too-long: "&cHome name must be 16 characters or less!"
+    invalid-name: "&cHome name can only contain letters, numbers, hyphens, and underscores!"
+    already-exists: "&cYou already have a home named '{name}'!"
+    cancelled: "&cHome creation cancelled."
+    enter-name: "&7Please enter a name for your home in chat:"
+    
+  home:
+    teleporting: "&7Teleporting in {delay} seconds..."
+    success: "&aTeleported to home '&f{name}&a'!"
+    not-found: "&cHome '{name}' not found!"
+    no-homes: "&cYou don't have any homes set!"
+    
+  delhome:
+    success: "&aHome '&f{name}&a' has been deleted!"
+    not-found: "&cHome '{name}' not found!"
+    cancelled: "&cHome deletion cancelled."
+    
+  homes:
+    title: "&fYour Homes &7({current}/{max})"
+    list-item: "&f■ {name} &7({world} @ {x}, {y}, {z})"
+    empty: "&cYou don't have any homes set!"
+    
+  help:
+    title: "&fHome Plugin Commands"
+    sethome: "&b/sethome [name] &7- Set a home at your location"
+    home: "&b/home [name] &7- Teleport to a home"
+    delhome: "&b/delhome [name] &7- Delete a home"
+    homes: "&b/homes &7- List all your homes"
+    help-command: "&b/home help &7- Show this help menu"
+    no-permission: "&c  No permission"
+    current-homes: "&6Your homes: {current}/{max}"
+    unlimited-homes: "&6Your homes: {current} (Unlimited)"
+
+# GUI Messages
+gui:
+  set-home:
+    title: "&bSet a New Home"
+    confirm-button: "&a✓ Continue to Name Home"
+    confirm-lore:
+      - "&7Click to set a home at your"
+      - "&7current location"
+    cancel-button: "&c✗ Cancel"
+    cancel-lore:
+      - "&7Click to cancel"
+    info-title: "&fLocation Info"
+    info-lore:
+      - "&7World: {world}"
+      - "&7X: {x}"
+      - "&7Y: {y}"
+      - "&7Z: {z}"
+      - ""
+      - "&eHomes: {current}/{max}"
+    no-homes: "&cYou don't have any homes set!"
+      
+  set-home-confirm:
+    title: "&bConfirm: {name}"
+    confirm-button: "&a✓ Confirm Set Home"
+    confirm-lore:
+      - "&7Set home at your current location"
+      - "&eName: {name}"
+    cancel-button: "&c✗ Cancel"
+    info-title: "&fHome Information"
+    max-homes-error: "&cYou have reached the maximum number of homes!"
+    home-set-success: "&aHome '{name}' has been set!"
+    cancelled: "&7Cancelled."
+    
+  select-home:
+    title: "&bSelect a Home"
+    home-button: "&f{name}"
+    home-lore:
+      - "&7World: {world}"
+      - "&7X: {x}"
+      - "&7Y: {y}"
+      - "&7Z: {z}"
+      - ""
+      - "&aClick to teleport"
+    no-homes: "&cYou don't have any homes to select!"
+    teleporting: "&7Teleporting in {delay} seconds..."
+    teleported: "&aTeleported to home '{name}'!"
+      
+  delete-home:
+    title: "&bDelete a Home"
+    home-button: "&f{name}"
+    home-lore:
+      - "&7World: {world}"
+      - "&7X: {x}"
+      - "&7Y: {y}"
+      - "&7Z: {z}"
+      - ""
+      - "&cClick to delete"
+    no-homes: "&cYou don't have any homes to delete!"
+    deleted: "&aHome '{name}' has been deleted!"
+
+# Error Messages
+errors:
+  no-permission: "&cYou don't have permission to use this command!"
+  player-only: "&cOnly players can use this command!"

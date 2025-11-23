@@ -1,0 +1,17 @@
+# HomePlugin Configuration
+
+# Default max homes (used if player has no permission nodes)
+max-homes: 5
+
+# Teleport delay in seconds (0 for instant teleport)
+teleport-delay: 3
+
+# Permission-based home limits:
+# Give players permission nodes like:
+#   homeplugin.homes.3  = 3 homes
+#   homeplugin.homes.10 = 10 homes
+#   homeplugin.homes.25 = 25 homes
+# If a player has multiple permissions, only the HIGHEST will be used
+# Example: Player with both homeplugin.homes.3 and homeplugin.homes.10 gets 10 homes
+
+config-version: 1.0
