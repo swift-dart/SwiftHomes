@@ -2,6 +2,7 @@ name: HomePlugin
 version: '1.0.0'
 main: com.homes.plugin.HomePlugin
 api-version: '1.21'
+folia-supported: true
 author: YourName
 description: Essentials-type home plugin with chest GUI
 

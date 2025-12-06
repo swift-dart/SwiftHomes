@@ -64,13 +64,13 @@ public class HomeCommand implements CommandExecutor {
             player.sendMessage(plugin.getMessageManager().getCommandMessage("home", "teleporting", 
                 MessageManager.replacements("delay", String.valueOf(delay))));
             
-            Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                player.teleport(home.getLocation());
+            SchedulerUtil.runDelayed(plugin, player.getLocation(), () -> {
+                player.teleportAsync(home.getLocation());
                 player.sendMessage(plugin.getMessageManager().getCommandMessage("home", "success", 
                     MessageManager.replacements("name", home.getName())));
             }, delay * 20L);
         } else {
-            player.teleport(home.getLocation());
+            player.teleportAsync(home.getLocation());
             player.sendMessage(plugin.getMessageManager().getCommandMessage("home", "success", 
                 MessageManager.replacements("name", home.getName())));
         }

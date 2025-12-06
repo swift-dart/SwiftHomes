@@ -12,6 +12,8 @@ commands:
     already-exists: "&cYou already have a home named '{name}'!"
     cancelled: "&cHome creation cancelled."
     enter-name: "&7Please enter a name for your home in chat:"
+    enter-name-title: "&bEnter a name for your home in chat"
+    enter-name-cancel: "&7Type &fcancel &7to cancel"
     
   home:
     teleporting: "&7Teleporting in {delay} seconds..."

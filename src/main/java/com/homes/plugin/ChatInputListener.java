@@ -105,7 +105,7 @@ public class ChatInputListener implements Listener {
         }
         
         // Open GUI to confirm
-        plugin.getServer().getScheduler().runTask(plugin, () -> {
+        SchedulerUtil.run(plugin, player.getLocation(), () -> {
             homeGUI.openSetHomeGUI(player, homeName);
         });
     }

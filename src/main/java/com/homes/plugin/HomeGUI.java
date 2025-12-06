@@ -314,12 +314,12 @@ public class HomeGUI implements Listener {
                 if (delay > 0) {
                     player.sendMessage(Colors.info("Teleporting in " + delay + " seconds..."));
                     
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                        player.teleport(home.getLocation());
+                    SchedulerUtil.runDelayed(plugin, player.getLocation(), () -> {
+                        player.teleportAsync(home.getLocation());
                         player.sendMessage(Colors.success("Teleported to home '" + home.getName() + "'!"));
                     }, delay * 20L);
                 } else {
-                    player.teleport(home.getLocation());
+                    player.teleportAsync(home.getLocation());
                     player.sendMessage(Colors.success("Teleported to home '" + home.getName() + "'!"));
                 }
             }

@@ -16,6 +16,13 @@ public class HomePlugin extends JavaPlugin {
         instance = this;
         logger = getLogger();
         
+        // Detect platform
+        if (SchedulerUtil.isFolia()) {
+            logger.info("Detected Folia platform - using region-based scheduling");
+        } else {
+            logger.info("Detected Paper/Spigot platform - using standard scheduling");
+        }
+        
         // Save default config
         saveDefaultConfig();
         
