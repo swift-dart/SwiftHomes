@@ -29,11 +29,11 @@ A modern, GUI-based home management plugin for Paper/Spigot Minecraft servers wi
 
 | Permission | Description | Default |
 |------------|-------------|---------|
-| `homeplugin.sethome` | Allows setting homes | `true` |
-| `homeplugin.home` | Allows teleporting to homes | `true` |
-| `homeplugin.delhome` | Allows deleting homes | `true` |
-| `homeplugin.homes` | Allows listing homes | `true` |
-| `homeplugin.admin` | Allows reloading messages and admin functions | `op` |
+| `swifthomes.sethome` | Allows setting homes | `true` |
+| `swifthomes.home` | Allows teleporting to homes | `true` |
+| `swifthomes.delhome` | Allows deleting homes | `true` |
+| `swifthomes.homes` | Allows listing homes | `true` |
+| `swifthomes.admin` | Allows reloading messages and admin functions | `op` |
 
 ### Home Limit Permissions
 
@@ -41,19 +41,19 @@ The plugin uses a **highest-wins** permission system. Give players one of these 
 
 | Permission | Homes Allowed |
 |------------|---------------|
-| `homeplugin.homes.1` | 1 home |
-| `homeplugin.homes.2` | 2 homes |
-| `homeplugin.homes.3` | 3 homes |
-| `homeplugin.homes.4` | 4 homes |
-| `homeplugin.homes.5` | 5 homes |
-| `homeplugin.homes.10` | 10 homes |
-| `homeplugin.homes.15` | 15 homes |
-| `homeplugin.homes.20` | 20 homes |
-| `homeplugin.homes.25` | 25 homes |
-| `homeplugin.homes.50` | 50 homes |
-| `homeplugin.unlimited` | Unlimited homes |
+| `swifthomes.homes.1` | 1 home |
+| `swifthomes.homes.2` | 2 homes |
+| `swifthomes.homes.3` | 3 homes |
+| `swifthomes.homes.4` | 4 homes |
+| `swifthomes.homes.5` | 5 homes |
+| `swifthomes.homes.10` | 10 homes |
+| `swifthomes.homes.15` | 15 homes |
+| `swifthomes.homes.20` | 20 homes |
+| `swifthomes.homes.25` | 25 homes |
+| `swifthomes.homes.50` | 50 homes |
+| `swifthomes.unlimited` | Unlimited homes |
 
-**Note:** The plugin checks permissions from 1-100, so you can create custom permissions like `homeplugin.homes.7` for 7 homes. The highest permission the player has will be used.
+**Note:** The plugin checks permissions from 1-100, so you can create custom permissions like `swifthomes.homes.7` for 7 homes. The highest permission the player has will be used.
 
 ## Configuration
 
@@ -82,10 +82,10 @@ After editing `messages.yml`, use `/homes reload` to apply changes without resta
 
 ## Installation
 
-1. Download `HomePlugin.jar`
+1. Download `swifthomes.jar`
 2. Place it in your server's `plugins/` folder
 3. Restart or reload your server
-4. Configure `config.yml` and `messages.yml` in `plugins/HomePlugin/`
+4. Configure `config.yml` and `messages.yml` in `plugins/swifthomes/`
 
 ## Building from Source
 
@@ -94,11 +94,11 @@ Requirements:
 - Gradle 8.5+
 
 ```bash
-cd HomePlugin
+cd swifthomes
 gradle clean build
 ```
 
-The compiled JAR will be in `build/libs/HomePlugin.jar`
+The compiled JAR will be in `build/libs/swifthomes.jar`
 
 ## Permissions Examples
 
@@ -106,13 +106,13 @@ The compiled JAR will be in `build/libs/HomePlugin.jar`
 
 ```bash
 # Give a player 3 homes
-lp user PlayerName permission set homeplugin.homes.3
+lp user PlayerName permission set swifthomes.homes.3
 
 # Give a group 10 homes
-lp group vip permission set homeplugin.homes.10
+lp group vip permission set swifthomes.homes.10
 
 # Give unlimited homes to admins
-lp group admin permission set homeplugin.unlimited
+lp group admin permission set swifthomes.unlimited
 ```
 
 ### permissions.yml Example
@@ -121,27 +121,27 @@ lp group admin permission set homeplugin.unlimited
 groups:
   default:
     permissions:
-      - homeplugin.sethome
-      - homeplugin.home
-      - homeplugin.delhome
-      - homeplugin.homes
-      - homeplugin.homes.3
+      - swifthomes.sethome
+      - swifthomes.home
+      - swifthomes.delhome
+      - swifthomes.homes
+      - swifthomes.homes.3
       
   vip:
     permissions:
-      - homeplugin.homes.10
+      - swifthomes.homes.10
       
   admin:
     permissions:
-      - homeplugin.unlimited
-      - homeplugin.admin
+      - swifthomes.unlimited
+      - swifthomes.admin
 ```
 
 ## Home Storage
 
 Homes are stored per-player in YAML files:
 ```
-plugins/HomePlugin/homes/<player-uuid>.yml
+plugins/swifthomes/homes/<player-uuid>.yml
 ```
 
 Each home stores:
