@@ -1,16 +1,18 @@
 # SwiftHomes
 
-A modern, GUI-based home management plugin for Paper/Spigot Minecraft servers with a fully customizable message system.
+A modern, GUI-based home management plugin for Paper/Spigot Minecraft servers with Essentials-style message formatting.
 
 ## Features
 
 - 🏠 Set multiple homes with custom names
 - 🎨 Modern, intuitive chest GUI interface
 - 🔧 Fully customizable messages via `messages.yml`
-- 🎯 Permission-based home limits
+- 🎯 Permission-based home limits (1-50 homes + unlimited)
 - ⚡ Teleport delay system
 - 💬 Chat-based home naming
-- 🌈 Modern color scheme
+- 🌈 Essentials-style formatting with MiniMessage
+- ✨ Unicode small caps for enhanced visual consistency
+- 🎨 Color-coded messages (green success, red errors, purple teleports)
 
 ## Commands
 
@@ -69,23 +71,28 @@ teleport-delay: 3
 
 ### messages.yml
 
-All plugin messages are fully customizable in `messages.yml`. Use `&` for color codes:
-- `&a` = Green
-- `&c` = Red
-- `&b` = Aqua
-- `&f` = White
-- `&7` = Gray
-- `&e` = Yellow
-- etc.
+All plugin messages are fully customizable in `messages.yml`. Uses **MiniMessage** format for modern text styling:
+
+**Formatting Examples:**
+- `<white>` = White text
+- `<#85bb65>` = Custom hex colors
+- `<bold>` = Bold text
+- `<reset>` = Reset formatting
+- `ꜱᴍᴀʟʟ ᴄᴀᴘꜱ` = Unicode small caps for style
+
+**Essentials-Style Pattern:**
+```yaml
+message: "\ ☄ <light_purple><bold>ᴛᴇʟᴇᴘᴏʀᴛ <reset><#6d6d6d>• <white>message text"
+```
 
 After editing `messages.yml`, use `/homes reload` to apply changes without restarting the server.
 
 ## Installation
 
-1. Download `swifthomes.jar`
+1. Download `SwiftHomes-v1.0.0.jar` from the [releases page](https://github.com/swift-dart/SwiftHomes/releases)
 2. Place it in your server's `plugins/` folder
 3. Restart or reload your server
-4. Configure `config.yml` and `messages.yml` in `plugins/swifthomes/`
+4. Configure `config.yml` and `messages.yml` in `plugins/SwiftHomes/`
 
 ## Building from Source
 
@@ -94,11 +101,11 @@ Requirements:
 - Gradle 8.5+
 
 ```bash
-cd swifthomes
-gradle clean build
+cd SwiftHomes
+./gradlew clean build
 ```
 
-The compiled JAR will be in `build/libs/swifthomes.jar`
+The compiled JAR will be in `build/libs/HomePlugin.jar` (rename to `SwiftHomes.jar` for deployment)
 
 ## Permissions Examples
 
@@ -141,7 +148,7 @@ groups:
 
 Homes are stored per-player in YAML files:
 ```
-plugins/swifthomes/homes/<player-uuid>.yml
+plugins/SwiftHomes/homes/<player-uuid>.yml
 ```
 
 Each home stores:
@@ -150,9 +157,15 @@ Each home stores:
 - X, Y, Z coordinates
 - Yaw and Pitch
 
+## Compatibility
+
+- **Server:** Paper/Spigot 1.21+
+- **Java:** 21+
+- **Folia:** Ready with scheduler utilities
+
 ## Support
 
-For issues, questions, or contributions, please open an issue on GitHub.
+For issues, questions, or contributions, please open an issue on the [GitHub repository](https://github.com/swift-dart/SwiftHomes).
 
 ## License
 
