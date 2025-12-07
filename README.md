@@ -1,4 +1,4 @@
-# HomePlugin
+# SwiftHomes
 
 A modern, GUI-based home management plugin for Paper/Spigot Minecraft servers with a fully customizable message system.
 
