@@ -1,4 +1,4 @@
-# HomePlugin Configuration
+# SwiftHomes Configuration
 
 # Default max homes (used if player has no permission nodes)
 max-homes: 5
@@ -8,10 +8,10 @@ teleport-delay: 3
 
 # Permission-based home limits:
 # Give players permission nodes like:
-#   homeplugin.homes.3  = 3 homes
-#   homeplugin.homes.10 = 10 homes
-#   homeplugin.homes.25 = 25 homes
+#   swifthomes.homes.3  = 3 homes
+#   swifthomes.homes.10 = 10 homes
+#   swifthomes.homes.25 = 25 homes
 # If a player has multiple permissions, only the HIGHEST will be used
-# Example: Player with both homeplugin.homes.3 and homeplugin.homes.10 gets 10 homes
+# Example: Player with both swifthomes.homes.3 and swifthomes.homes.10 gets 10 homes
 
 config-version: 1.0

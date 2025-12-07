@@ -25,7 +25,7 @@ public class HomesCommand implements CommandExecutor {
         
         Player player = (Player) sender;
         
-        if (!player.hasPermission("homeplugin.homes")) {
+        if (!player.hasPermission("swifthomes.homes")) {
             sender.sendMessage(plugin.getMessageManager().getError("no-permission"));
             return true;
         }
@@ -38,12 +38,12 @@ public class HomesCommand implements CommandExecutor {
         
         // If args provided and first arg is "reload", reload messages
         if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
-            if (!player.hasPermission("homeplugin.admin")) {
+            if (!player.hasPermission("swifthomes.admin")) {
                 sender.sendMessage(plugin.getMessageManager().getError("no-permission"));
                 return true;
             }
             plugin.getMessageManager().reload();
-            sender.sendMessage(Component.text("Messages reloaded!").color(NamedTextColor.GREEN));
+            sender.sendMessage(plugin.getMessageManager().getMessage("messages-reloaded"));
             return true;
         }
         
@@ -77,25 +77,25 @@ public class HomesCommand implements CommandExecutor {
     }
     
     private void showHelp(CommandSender sender, Player player) {
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.title"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-title"));
         sender.sendMessage(Component.text(""));
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.sethome"));
-        if (!player.hasPermission("homeplugin.sethome")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.no-permission"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-sethome"));
+        if (!player.hasPermission("swifthomes.sethome")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-no-permission"));
         }
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.home"));
-        if (!player.hasPermission("homeplugin.home")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.no-permission"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-home"));
+        if (!player.hasPermission("swifthomes.home")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-no-permission"));
         }
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.delhome"));
-        if (!player.hasPermission("homeplugin.delhome")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.no-permission"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-delhome"));
+        if (!player.hasPermission("swifthomes.delhome")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-no-permission"));
         }
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.homes"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-homes"));
         
         sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.help-command"));
         

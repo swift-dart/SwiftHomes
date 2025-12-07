@@ -1,7 +1,7 @@
 package com.homes.plugin;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -17,7 +17,7 @@ import java.util.Map;
 public class MessageManager {
     private final HomePlugin plugin;
     private FileConfiguration messages;
-    private final LegacyComponentSerializer serializer = LegacyComponentSerializer.legacyAmpersand();
+    private final MiniMessage miniMessage = MiniMessage.miniMessage();
     
     public MessageManager(HomePlugin plugin) {
         this.plugin = plugin;
@@ -47,7 +47,7 @@ public class MessageManager {
     }
     
     public Component getMessage(String path, Map<String, String> replacements) {
-        String message = messages.getString(path, "&cMessage not found: " + path);
+        String message = messages.getString("messages." + path, "<#c93434><bold>ᴇʀʀᴏʀ <reset><#6d6d6d>• <white>Message not found: " + path);
         
         // Apply replacements
         if (replacements != null) {
@@ -56,7 +56,7 @@ public class MessageManager {
             }
         }
         
-        return serializer.deserialize(message);
+        return miniMessage.deserialize(message);
     }
     
     public Component getMessage(String path) {
@@ -68,7 +68,7 @@ public class MessageManager {
     }
     
     public List<Component> getComponentList(String path, Map<String, String> replacements) {
-        List<String> messageList = messages.getStringList(path);
+        List<String> messageList = messages.getStringList("messages." + path);
         List<Component> components = new ArrayList<>();
         
         for (String message : messageList) {
@@ -78,7 +78,7 @@ public class MessageManager {
                     message = message.replace("{" + entry.getKey() + "}", entry.getValue());
                 }
             }
-            components.add(serializer.deserialize(message));
+            components.add(miniMessage.deserialize(message));
         }
         
         return components;
@@ -90,7 +90,7 @@ public class MessageManager {
     
     // Convenience methods for common message types
     public Component getCommandMessage(String command, String key, Map<String, String> replacements) {
-        return getMessage("commands." + command + "." + key, replacements);
+        return getMessage(command + "-" + key, replacements);
     }
     
     public Component getCommandMessage(String command, String key) {
@@ -98,7 +98,7 @@ public class MessageManager {
     }
     
     public Component getGuiMessage(String gui, String key, Map<String, String> replacements) {
-        return getMessage("gui." + gui + "." + key, replacements);
+        return getMessage("gui-" + gui + "-" + key, replacements);
     }
     
     public Component getGuiMessage(String gui, String key) {
@@ -106,7 +106,7 @@ public class MessageManager {
     }
     
     public Component getError(String key, Map<String, String> replacements) {
-        return getMessage("errors." + key, replacements);
+        return getMessage(key, replacements);
     }
     
     public Component getError(String key) {

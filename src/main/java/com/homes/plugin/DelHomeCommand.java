@@ -28,7 +28,7 @@ public class DelHomeCommand implements CommandExecutor {
         
         Player player = (Player) sender;
         
-        if (!player.hasPermission("homeplugin.delhome")) {
+        if (!player.hasPermission("swifthomes.delhome")) {
             sender.sendMessage(plugin.getMessageManager().getError("no-permission"));
             return true;
         }

@@ -28,7 +28,7 @@ public class SetHomeCommand implements CommandExecutor {
         
         Player player = (Player) sender;
         
-        if (!player.hasPermission("homeplugin.sethome")) {
+        if (!player.hasPermission("swifthomes.sethome")) {
             sender.sendMessage(plugin.getMessageManager().getError("no-permission"));
             return true;
         }

@@ -312,15 +312,18 @@ public class HomeGUI implements Listener {
                 
                 int delay = plugin.getConfig().getInt("teleport-delay", 3);
                 if (delay > 0) {
-                    player.sendMessage(Colors.info("Teleporting in " + delay + " seconds..."));
+                    player.sendMessage(plugin.getMessageManager().getCommandMessage("home", "teleporting", 
+                        MessageManager.replacements("delay", String.valueOf(delay))));
                     
                     SchedulerUtil.runDelayed(plugin, player.getLocation(), () -> {
                         player.teleportAsync(home.getLocation());
-                        player.sendMessage(Colors.success("Teleported to home '" + home.getName() + "'!"));
+                        player.sendMessage(plugin.getMessageManager().getCommandMessage("home", "success", 
+                            MessageManager.replacements("name", home.getName())));
                     }, delay * 20L);
                 } else {
                     player.teleportAsync(home.getLocation());
-                    player.sendMessage(Colors.success("Teleported to home '" + home.getName() + "'!"));
+                    player.sendMessage(plugin.getMessageManager().getCommandMessage("home", "success", 
+                        MessageManager.replacements("name", home.getName())));
                 }
             }
         }

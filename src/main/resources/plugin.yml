@@ -1,4 +1,4 @@
-name: HomePlugin
+name: SwiftHomes
 version: '1.0.0'
 main: com.homes.plugin.HomePlugin
 api-version: '1.21'
@@ -10,66 +10,66 @@ commands:
   sethome:
     description: Open GUI to set a home
     usage: /sethome [name]
-    permission: homeplugin.sethome
+    permission: swifthomes.sethome
   home:
     description: Teleport to a home or open GUI to select
     usage: /home [name]
-    permission: homeplugin.home
+    permission: swifthomes.home
   delhome:
     description: Delete a home or open GUI to select
     usage: /delhome [name]
-    permission: homeplugin.delhome
+    permission: swifthomes.delhome
   homes:
     description: List all your homes. Use '/homes help' for detailed help or '/homes reload' to reload messages
     usage: /homes [help|reload]
-    permission: homeplugin.homes
+    permission: swifthomes.homes
 
 permissions:
-  homeplugin.sethome:
+  swifthomes.sethome:
     description: Allows players to set homes
     default: true
-  homeplugin.home:
+  swifthomes.home:
     description: Allows players to teleport to homes
     default: true
-  homeplugin.delhome:
+  swifthomes.delhome:
     description: Allows players to delete homes
     default: true
-  homeplugin.homes:
+  swifthomes.homes:
     description: Allows players to list homes
     default: true
-  homeplugin.unlimited:
+  swifthomes.unlimited:
     description: Allows unlimited homes
     default: op
-  homeplugin.homes.1:
+  swifthomes.homes.1:
     description: Allows 1 home
     default: false
-  homeplugin.homes.2:
+  swifthomes.homes.2:
     description: Allows 2 homes
     default: false
-  homeplugin.homes.3:
+  swifthomes.homes.3:
     description: Allows 3 homes
     default: false
-  homeplugin.homes.4:
+  swifthomes.homes.4:
     description: Allows 4 homes
     default: false
-  homeplugin.homes.5:
+  swifthomes.homes.5:
     description: Allows 5 homes
     default: false
-  homeplugin.homes.10:
+  swifthomes.homes.10:
     description: Allows 10 homes
     default: false
-  homeplugin.homes.15:
+  swifthomes.homes.15:
     description: Allows 15 homes
     default: false
-  homeplugin.homes.20:
+  swifthomes.homes.20:
     description: Allows 20 homes
     default: false
-  homeplugin.homes.25:
+  swifthomes.homes.25:
     description: Allows 25 homes
     default: false
-  homeplugin.homes.50:
+  swifthomes.homes.50:
     description: Allows 50 homes
     default: false
-  homeplugin.admin:
+  swifthomes.admin:
     description: Allows reloading messages and other admin functions
     default: op

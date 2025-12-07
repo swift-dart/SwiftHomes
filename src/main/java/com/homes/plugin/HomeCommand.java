@@ -29,7 +29,7 @@ public class HomeCommand implements CommandExecutor {
         
         Player player = (Player) sender;
         
-        if (!player.hasPermission("homeplugin.home")) {
+        if (!player.hasPermission("swifthomes.home")) {
             sender.sendMessage(plugin.getMessageManager().getError("no-permission"));
             return true;
         }
@@ -79,38 +79,38 @@ public class HomeCommand implements CommandExecutor {
     }
     
     private void showHelp(CommandSender sender, Player player) {
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.title"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-title"));
         sender.sendMessage(Component.text(""));
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.sethome"));
-        if (!player.hasPermission("homeplugin.sethome")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.no-permission"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-sethome"));
+        if (!player.hasPermission("swifthomes.sethome")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-no-permission"));
         }
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.home"));
-        if (!player.hasPermission("homeplugin.home")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.no-permission"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-home"));
+        if (!player.hasPermission("swifthomes.home")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-no-permission"));
         }
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.delhome"));
-        if (!player.hasPermission("homeplugin.delhome")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.no-permission"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-delhome"));
+        if (!player.hasPermission("swifthomes.delhome")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-no-permission"));
         }
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.homes"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-homes"));
         
-        sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.help-command"));
+        sender.sendMessage(plugin.getMessageManager().getMessage("help-help-command"));
         
         sender.sendMessage(Component.text(""));
         
         int current = plugin.getHomeManager().getHomeCount(player);
         int max = plugin.getHomeManager().getMaxHomes(player);
         
-        if (player.hasPermission("homeplugin.unlimited")) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.unlimited-homes", 
+        if (player.hasPermission("swifthomes.unlimited")) {
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-unlimited-homes", 
                 MessageManager.replacements("current", String.valueOf(current))));
         } else {
-            sender.sendMessage(plugin.getMessageManager().getMessage("commands.help.current-homes", 
+            sender.sendMessage(plugin.getMessageManager().getMessage("help-current-homes", 
                 MessageManager.replacements("current", String.valueOf(current), "max", String.valueOf(max))));
         }
     }

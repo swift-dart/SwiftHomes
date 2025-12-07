@@ -67,15 +67,15 @@ public class HomeManager {
     
     public int getMaxHomes(Player player) {
         // Check for unlimited permission first
-        if (player.hasPermission("homeplugin.unlimited")) {
+        if (player.hasPermission("swifthomes.unlimited")) {
             return Integer.MAX_VALUE;
         }
         
-        // Check for tiered permissions (homeplugin.homes.1, homeplugin.homes.3, etc.)
+        // Check for tiered permissions (swifthomes.homes.1, swifthomes.homes.3, etc.)
         // Find the highest permission the player has
         int maxFromPermissions = 0;
         for (int i = 1; i <= 100; i++) {
-            if (player.hasPermission("homeplugin.homes." + i)) {
+            if (player.hasPermission("swifthomes.homes." + i)) {
                 maxFromPermissions = Math.max(maxFromPermissions, i);
             }
         }
